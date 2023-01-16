@@ -1,0 +1,24 @@
+1. What is the difference between Named export, default export and * as export?
+A. 
+Named Export:- 1. Exports without a default tag are Named exports.
+2. When importing a named export, we need to specify the exact same name of the function or class.
+3. We use curly braces to import names export.
+
+Default Export:- 1. Exports with the default tag are Default exports.
+2. While importing default export, we can specify any name for the function or class.
+3. When importing a default export, we don’t use curly brackets.
+
+
+2. What is the importance of config.js file?
+A. Config. js allows developers to configure their applications in an XML block instead of hard-coding values inside their scripts or in JSON objects. The XML can be embedded inside an HTML document or in a separate XML file. The configuration block may contain strings, numbers, arrays and HTML. Furthermore, variables can be inserted into these values, allowing developers to use the XML block as a simple templating system for their applications.
+
+
+3. What are React Hooks?
+A. React Hooks are simple JavaScript functions that we can use to isolate the reusable part from a functional component. Hooks can be stateful and can manage side-effects.
+Hooks allow functional components to have access to state and other React features.
+
+
+4. Why do we need a useState hook?
+A. The useState hook is used for storing variables that are part of the application's state and will change as the user interacts with the website.
+The useState Hook can be used to keep track of strings, numbers, booleans, arrays, objects, and any combination of these. We could create multiple state Hooks to track individual values.
+
