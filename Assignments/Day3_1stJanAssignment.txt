@@ -1,0 +1,29 @@
+1. What is JSX?
+A. JSX is a React extension to the JavaScript language syntax which provides a way to structure component rendering using syntax familiar to many developers. It is similar in appearance to HTML.
+
+
+2. Advantages/Superpowers of JSX.
+A. 
+1. JSX makes it easier to write or add HTML in React.
+2. JSX can easily convert HTML tags to react elements.
+3. It is faster than regular JavaScript.
+4. JSX allows us to put HTML elements in DOM without using appendChild() or createElement() method.
+5. As JSX is an expression, we can use it inside of if statements and for loops, assign it to variables, accept it as arguments, or return it from functions.
+6. JSX prevents XSS (cross-site-scripting) attacks popularly known as injection attacks.
+7. It is type-safe, and most of the errors can be found at compilation time.
+
+
+3. Role of type attribute in script tag? What options can I use there?
+A. The type attribute specifies the type of the script. The type attribute identifies the content between the <script> and </script> tags.
+It has a Default value which is “text/javascript”.
+Other options are:
+module
+text/ecmascript
+application/ecmascript
+application/javascript
+
+
+4. {TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} in JSX.
+A. {TitleComponent} - Here TitleComponent might refer to any JS variable that is being written in JSX.
+{<TitleComponent/>} - It is used to embed a functional component in JSX.
+{<TitleComponent></TitleComponent>} - We can also write function component like this in JSX.
