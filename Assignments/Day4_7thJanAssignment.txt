@@ -1,0 +1,86 @@
+1. Is JSX mandatory for React?
+A. JSX is not a requirement for using React. Using React without JSX is especially convenient when you don’t want to set up compilation in your build environment.
+Each JSX element inturn calls React.createElement() in the background. So, everything we do using JSX can be definitely done without using JSX.
+But we use JSX in order to make it easy for us(the developers) to code.
+
+
+2. Is ES6 mandatory for React?
+A. Its not mandatory to use ES6 for React but React becomes much easier to learn if you know ES6 syntax properly.
+ES6 supports class syntax. This mirrors other programming languages, but ES6 takes the traditional style of defining classes and inheritance and maps it to the corresponding prototype chain. This is a small change, but it can make it a lot smoother to write object-oriented code in ES6 compared to other languages.
+ES6 is what provides us JSX.
+
+
+3. {TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} in JSX.
+A. {TitleComponent} - Here TitleComponent might refer to any JS variable that is being written in JSX.
+{<TitleComponent/>} - It is used to embed a functional component in JSX.
+{<TitleComponent></TitleComponent>} - We can also write function component like this in JSX.
+
+
+4. How can I write comments in JSX.
+A. Single line comment - // comment
+Multi-line comment - /* 
+comments
+*/
+
+
+5. What is <React.Fragment></React.Fragment> and <></> ?
+A. React Fragments allow you to wrap or group multiple elements without adding an extra node(like div does) to the DOM. This can be useful when rendering multiple child elements/components in a single parent component.
+<React.Fragement>
+	<h1></h1>
+	<h2></h2>
+	<h3></h3>
+</React.Fragement>
+
+<></> is short hand version of <React.Fragment> </React.Fragement>
+
+<>
+	<h1></h1>
+	<h2></h2>
+	<h3></h3>
+</>
+
+
+6. What is Virtual DOM?
+A. The virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM.
+
+i.e. virtual DOM is not the actual DOM but the representation of the actual DOM.
+
+
+7. What is Reconciliation in React?
+A. The mechanism to diff one tree with another to determine which parts need to be changed and then update the original DOM with it is called Reconciliation.
+
+
+8. What is React Fiber?
+A. A fiber in a react is just a plain JavaScript object with some properties. The current react reconciler, the fiber reconciler is named after this object and is the default reconciler since react version 16.
+
+React fiber is a complete rewrite of react that fixes a few long-standing issues and offers incredible and offers opportunities heading into the future.
+
+Fiber focuses on animations and responsiveness. It has the ability to split work into chunks and prioritize tasks. We can pause work and come back to it later. We can also reuse previously completed work or maybe abort it if it is not needed. As opposed to the old React reconciler, it is asynchronous.
+
+
+9. Why do we need keys in React? When do we need keys in React?
+A. A “key” is a special string attribute you need to include when creating lists of elements in React. Keys are used in React to identify which items in the list are changed, updated, or deleted. In other words, we can say that keys are used to give an identity to the elements in the lists.
+
+We need keys when we add new React elements(say div) to the already existing ones(divs). React does not understand which is the new div that is added. So, if we have keys then based on the key value the React can understand which is the new div added and it reciprocates the same on the UI.
+
+
+10. Can we use index as keys in React?
+A. It is not recommended using indexes for keys if the order of items may change. This can negatively impact performance and may cause issues with component state.
+
+indexes can be used as keys:
+
+1. If new elements are pushed to the end of the array (as pushing elements to the end of the array will not affect indexes of existing elements)
+2. If the array is static.
+3. If the array is not filtered.
+
+
+11. What is props in React?
+A. Props are arguments passed into React components. Props are passed to components via HTML attributes. props stands for properties.
+
+It helps to reuse the existing React Component to create multiple such component items.
+
+Whether you declare a component as a function or a class, it must never modify its own props.
+
+
+12. What is a Config Driven UI?
+A. 
