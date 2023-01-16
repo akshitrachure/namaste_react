@@ -1,0 +1,55 @@
+1. What is Emmet?
+
+An emmet is a set of plug-ins used for text editors which takes abbreviations and short expressions and convert them into full code. This increases the speed of writing code.
+It is mostly used for HTML, XML.
+
+
+2.Difference between a Library and Framework? 
+
+A library is a collection of functions developers can call at will and still control the flow of the software application. The operations performed to be performed by libraries are precisely and specifically defined.
+
+A framework is a structure in which the application defines the content of the operation by asking the developer to fill in the spaces. The framework defines the concept with the functionality itself is defined by the developer with the end-user in mind.
+
+Frameworks and libraries are code written by third parties to solve regular/common problems or to optimise performance. A key difference between the two is the inversion of control. When using a library, the control remains with the developer who tells the application when to call library functions. When using a framework, the control is reversed, which means that the framework tells the developer where code needs to be provided and calls it as it requires.
+
+
+3. What is CDN? Why do we use it? 
+ 
+CDN - Content Delivery Network
+It is nothing but a distributed servers which delivers/distributes the content from the "origin" server to the user based on the geographical location of the user. The requested content is first stored in the origin server and then replicated to the server which is near to the user.
+
+In order to improve speed and connectivity, a CDN will place servers at the exchange points between different networks.
+
+These Internet exchange points (IXPs) are the primary locations where different Internet providers connect in order to provide each other access to traffic originating on their different networks. By having a connection to these high speed and highly interconnected locations, a CDN provider is able to reduce costs and transit times in high speed data delivery.
+
+
+4. Why is React called React ?
+
+React was developed for applications (Facebook) that have constantly changing data. Since React is a front-end framework or the “View” in MVC, this means that as the user clicks around and changes the app's data, the view should “react” or change with those user events.
+
+
+5. What is crossorigin in React CDN ?
+
+In ReactJS, Cross-Origin Resource Sharing (CORS) refers to the method that allows you to make requests to the server deployed at a different domain. As a reference, if the frontend and backend are at two different domains, we need CORS there. 
+
+
+6. What is the difference between React and React DOM ?
+
+React is a javascript library responsible for creating React elements (like document.createElement())
+
+ReactDOM is a complimentary library which is responsible for rendering React elementss to the DOM. (like root.append())
+i.e. ReactDOM binds the React components to the browser's DOM.
+
+
+7.Difference between react.development.js and react.production.js files via CDN ?
+
+The development build is used for development reasons. It offers Source Maps, debugging and often times hot reloading ability in those builds.
+
+The production build, on the other hand, runs in production mode which means this is the code running on the client's machine. The production build had ugly code and builds your source files into one or multiple minimized files. It also extracts CSS and images and of course any other sources you're loading with Webpack. There's also no hot reloading included. Source Maps might be included as separate files depending on your webpack.
+ 
+
+8. Difference between async and defer ?
+
+async - When the async keyword is used in the script tag then the content of the link included in script is loaded asynchronously while parsing the html and then parsing is paused and the script code is executed and later the html parsing is resumed.
+
+defer - When the defer keyword is used in the script tag then the content of the link included in script is loaded parallely and the code is executed in parallel to the html parsing.

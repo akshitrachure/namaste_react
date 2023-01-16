@@ -1,3 +1,5 @@
+import React from "react";
+import ReactDOM from "react-dom";
 
 const heading1 = React.createElement("h1",{id:"h1", key:"h1"},"Heading1");
 
