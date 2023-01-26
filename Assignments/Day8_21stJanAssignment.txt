@@ -1,0 +1,51 @@
+1. How do you create Nested Routes react-router-dom configuration.
+A. If we need to create Nested Router configuration in react-router-dom, we need to write the path and element inside the parent object's children array.
+Ex:
+const appRouter = createBrowserRouter([
+{
+	path:"/",
+	element:<Parent />,
+	children:[
+	{
+		path:"/child",
+		element:<Child />,
+		children:[
+		{
+			path:"/innerChild",
+			element:<InnerChild />
+		}
+		]	
+	}
+	]
+}
+]);
+
+
+2. What is the order of life cycle method calls in Class Based Components.
+A. Parent's constructor
+Parent's render
+Child's constructor
+Child's render
+Child's componentDidMount
+Parent's componentDidMount
+Parent's componentWillUnmount
+Child's componentWillUnmount
+
+
+3. Why do we use componentDidMount?
+A. The componentDidMount() method allows us to execute the React code when the component is already placed in the DOM (Document Object Model). This method is called during the Mounting phase of the React Life-cycle i.e after the component is rendered.
+All the AJAX requests and the DOM or state updation should be coded in the componentDidMount() method block. We can also set up all the major subscriptions here but to avoid any performance issues, always remember to unsubscribe them in the componentWillUnmount() method.
+
+
+4. Why do we use componentWillUnmount? Show with Example.
+A. When we move from a page where we have written some code for some action to take place, we need to stop the action because we may not need it in the new page which we moved to. In that case we need to clear the action in the componentWillunmount method.
+Ex:
+function componentDidMount(){
+	const this.timer = setInterval(()=>{
+		console.log("This logs for every 1sec");
+	},1000);
+}
+
+function componentWillUnmount(){
+	clearInterval(this.timer);
+}

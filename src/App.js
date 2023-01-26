@@ -10,6 +10,9 @@ import About from "./components/About"
 import Contact from "./components/ContactUs";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Profile from "./components/Profile";
+
+
 
 // const heading1 = React.createElement("h1",{id:"h1", key:"h1"},"Heading1");
 
@@ -72,7 +75,13 @@ const appRouter = createBrowserRouter([
       {
         path:'/about',
         element:<About/>,
-        errorElement:<Error/>
+        errorElement:<Error/>,
+        children:[
+          {
+            path:"profile",
+            element:<Profile/>
+          }
+        ]
       },
       {
         path:'/contact',
