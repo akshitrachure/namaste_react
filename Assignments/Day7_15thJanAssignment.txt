@@ -1,0 +1,21 @@
+1. What are various ways to add images into out App? Explain with code examples?
+A.One way is to use CDN (best way as it is faster and CDN will have 100% Up time).
+Another way is to download the image and store in a folder locally and then import it to the respective component and use it.
+
+
+2. What would happen if we do console.log(useState())?
+A. It prints an array(2), where the 1st element will be the initial value and the 2nd element will be the function which is used to update the state.
+
+
+
+3. How will useEffect behave if we don't add a dependency array?
+A. If we don not add a dependecny array then the useEffect will get executed each and every time when the component re-renders.
+
+
+4. What is SPA?
+A. A single-page application (SPA) is a webpage that dynamically interacts with the web browser by rewriting the current web page with data from the webserver. As a result, the webpage does not reload during its execution and instead operates in a browser.
+
+
+5. What is the difference between Client side routing and Server side routing?
+A. In server-side routing what usually happens when we are entering a URL for the first time or we want to change the page, maybe we click on the about us section or the navbar, the browser immediately detects that change in the URL then the browser makes an HTTP request to the server then the server re-renders the HTML into the application, now this can be very expensive and would require time-based on the internet speed and some other factors.
+In client side routing we don't need to go through all these stages, although when we first load the application that is inputing the web address the full react app is being rendered from the server, but after that when we want to change pages, maybe we click on the navbar the browser watches for change in the URL and immediately it detects change in the URL it uses the HTML5 history API to fetch the page that has already been loaded in when the application was first loaded in and returns it to the browser, and how react routerknows which particular page the user is making reference to is by going off to the set of configuration which would have a couple of URLs and components that would render to the root of those URLs, so when we click on the navbar react router goes on to search for the URL and its matching component and then that component is being rendered with a javascript function call.
