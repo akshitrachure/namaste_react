@@ -1,40 +1,45 @@
-import { restaurantList } from "../config";
+//import { restaurantList } from "../config";
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-
-function filterFunction(inputText, restaurants){
-    const result = restaurants.filter((restaurant)=>(
-        
-            restaurant?.data?.name?.toLowerCase()?.includes(inputText?.toLowerCase())
-        
-    ))
-    return result;
-}
-
+import { filterData } from "../utils/helper";
+import useRestaurantDetails from "../utils/useRestaurantDetails";
+import { FETCH_RESTAURANT_DETAILS_URL } from "../config";
+import useOnline from "../utils/useOnline";
 
 const Body = () =>{
 
-    console.log(useState());
+    //console.log(useState());
     const [searchText, setSearchText] = useState("");
     const [allRestaurants, setAllRestaurants] = useState([]);
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
+    
+    const restaurantsDetails = useRestaurantDetails();
     useEffect(()=>{
-        getRestaurantDetails();
-    },[]);
+        setAllRestaurants(restaurantsDetails);
+        setFilteredRestaurants(restaurantsDetails);
+    },[restaurantsDetails]);
 
 
-    async function getRestaurantDetails(){
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
-        const json =  await data.json();
-        setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-        setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    }
+    console.log("BODYYYYYYYYYYYYYYYY");
+    // console.log(restaurantsDetails);
+    // setAllRestaurants(restaurantsDetails);
+    // setFilteredRestaurants(restaurantsDetails);
+    // console.log(prints)
+
+    const isOnline = useOnline();
+
+    if(!isOnline)
+        return <h1>🔴 Offline, please check your internet connection!!</h1>;
+
+
+
 
     
-
+    if(!allRestaurants)
+        return null;
 
     return allRestaurants?.length === 0 ? (<Shimmer/>) : (
         <>
@@ -43,7 +48,7 @@ const Body = () =>{
                     setSearchText(e.target.value)
                 }}></input>
                 <button className="search-btn" onClick={()=>{
-                    const filteredData = filterFunction(searchText, allRestaurants);
+                    const filteredData = filterData(searchText, allRestaurants);
                     setFilteredRestaurants(filteredData);
                 }}>Search</button>
             </div>

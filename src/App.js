@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { restaurantList } from "./config";
 import Header from "./components/Header";
@@ -6,11 +6,18 @@ import Body from "./components/Body";
 import Footer from "./components/Footer";
 import RestaurantCard from "./components/RestaurantCard";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import About from "./components/About"
+//import About from "./components/About"
 import Contact from "./components/ContactUs";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
+//import Instamart from "./components/Instamart";
+
+
+const Instamart = lazy(()=> import("./components/Instamart"));
+
+const About = lazy(()=> import("./components/About"));
+
 
 
 
@@ -74,7 +81,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path:'/about',
-        element:<About/>,
+        element:<Suspense fallback={<h1>Loading...</h1>}><About/></Suspense>,
         errorElement:<Error/>,
         children:[
           {
@@ -91,6 +98,11 @@ const appRouter = createBrowserRouter([
       {
         path:'/restaurant/:resId',
         element:<RestaurantMenu/>,
+        errorElement:<Error/>
+      },
+      {
+        path:'/instamart',
+        element:<Suspense fallback={<h1>Loading...</h1>}><Instamart/></Suspense>,
         errorElement:<Error/>
       }
     ]

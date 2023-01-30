@@ -1,0 +1,31 @@
+1. When and why do we need lazy()?
+A. We should only use React.lazy() when we need to load a component asynchronously. The component is not readily needed in the initial render of the app, and it is not needed in the render of a specific page.
+Lazy initialization of an object means that its creation is deferred(postponed) until it is first used. Lazy initialization is primarily used to improve performance, avoid wasteful computation, and reduce program memory requirements.
+
+
+2. What is Suspense?
+A. A component built with React.lazy() is only loaded when it is required to be displayed. While the lazy component is loading, we should probably show some form of placeholder content, such as a loading indication. React.Suspense is a component used to surround lazy components.
+<Suspense> lets us display a fallback until its children have finished loading.
+
+
+3. Why we got this Error: A component suspended while responding to synchronous input. This will cause the UI to be replaced with a loading indicator. To fix, updates that suspend should be wrapped with startTransition. How does suspend fix this error?
+A. A component built with React.lazy() is only loaded when it is required to be displayed. Such component takes time to load when we are displaying the UI. So we wrap our component inside Suspense component which indicate React that the data a component is reading is not ready yet. React can then wait for it to be ready and update the UI. <Suspense> lets us display a fallback until its children have finished loading.
+
+
+4. Advantages and disadvantages of using code splitting pattern?
+A. 
+Advantages:
+1. Code splitting helps us to reduce the size of a bundle.
+2. Increases performance.
+3. Only imports the required components for the current page and lazy imports/loads those components which are required in other pages. i.e. components loads only on demand.
+4. Reduces the load time of a page.
+
+Disadvantages:
+1. Very important to choose which components need to be included in separate bundles.
+2. We can only use code splitting in client side rendering.
+
+
+
+5. When do we and why do we need suspense?
+A. A component built with React.lazy() is only loaded when it is required to be displayed. While the lazy component is loading, we should probably show some form of placeholder content, such as a loading indication. React.Suspense is a component used to surround lazy components.
+<Suspense> lets us display a fallback until its children have finished loading.
