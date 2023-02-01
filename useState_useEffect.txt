@@ -1,0 +1,3 @@
+Dont use useEffect outside functional component.
+
+Dont use useState in if(), for() etc.

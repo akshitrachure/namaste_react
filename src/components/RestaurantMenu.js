@@ -13,19 +13,19 @@ const RestaurantMenu=()=>{
     const restaurant = useRestaurantInfo(resId);
 
     return !restaurant ? (<Shimmer/>) : (
-        <div className="menu">
+        <div className="flex flex-wrap m-4">
 
-        <div>
+        <div className="p-3">
             {/* <h1>Restaurant ID:{restaurant.id}</h1> */}
-            <h1>{restaurant?.name}</h1>
-            <img  src={IMG_CDN_URL+restaurant?.cloudinaryImageId} />
-            <h3>Area: {restaurant?.area}</h3>
-            <h3>City: {restaurant?.city}</h3>
-            <h3>Rating: {restaurant?.avgRating} stars</h3>
-            <h3>{restaurant?.costForTwoMsg}</h3>
+            <h1 className="font-bold text-3xl py-3 text-center">{restaurant?.name}</h1>
+            <img className="w-96 py-2" src={IMG_CDN_URL+restaurant?.cloudinaryImageId} />
+            <h3 className="px-4 font-semibold text-lg">Area: {restaurant?.area}</h3>
+            <h3 className="px-4 font-semibold text-lg">City: {restaurant?.city}</h3>
+            <h3 className="px-4 font-semibold text-lg">Rating: {restaurant?.avgRating} stars</h3>
+            <h3 className="px-4 font-semibold text-lg">{restaurant?.costForTwoMsg}</h3>
         </div>
-        <div>
-            <h1>Menu</h1>
+        <div className="px-10 py-3">
+            <h1 className="font-bold text-3xl py-3">Menu</h1>
             <ul>
                 {Object.values(restaurant?.menu?.items).map((item)=>(<li key={item.id}>{item.name}</li>))}
             </ul>

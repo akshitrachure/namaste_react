@@ -27,11 +27,11 @@ class ProfileClass extends React.Component{
         console.log("Child Render");
         return(
             <div>
-                <h1>Profile Class based component</h1>
-                <p>{this.props.name}</p>
-                <p>{this.props.age}</p>
-                <p>{this.state.count}, {this.state.count2}</p>
-                <button onClick={(e)=>(
+                <h1 className="text-xl p-2">Profile Class based component</h1>
+                <p className="p-2">{this.props.name}</p>
+                <p className="p-2">{this.props.age}</p>
+                <p className="p-2">{this.state.count}, {this.state.count2}</p>
+                <button className=" bg-purple-600 hover:bg-gray-500 text-white rounded-md p-2" onClick={(e)=>(
                     this.setState({
                         count:1,
                         count2: 2

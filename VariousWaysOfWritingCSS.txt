@@ -1,0 +1,15 @@
+Ways to write css
+
+1. In a style.css file
+2. SCSS
+3. Inline CSS
+4. Styled Components
+5. Using framework or libraries like Tailwind CSS, Material UI, Ant UI, Base UI, Bootstrap, Chakra UI etc.
+
+
+
+
+
+
+- props drilling
+react dev tools chrome extension

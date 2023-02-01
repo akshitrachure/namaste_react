@@ -7,7 +7,7 @@ const Title = () => {
     return(
         <>
             <a href="/">
-            <img className="image-logo" alt="Logo Image" src="https://yt3.ggpht.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj"></img>
+            <img className="w-24" alt="Logo Image" src="https://yt3.ggpht.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj"></img>
             </a>
             {/* <input type="text"></input> */}
         </>
@@ -24,22 +24,22 @@ const Header = () => {
     // console.log(useState("Hi"));
 
     return(
-        <div className="header">
+        <div className="flex justify-between bg-orange-200 shadow-lg">
             <Title/>
 
-            <div className="nav-items">
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About Us</Link></li>
-                    <li><Link to="/contact">Contact Us</Link></li>
-                    <li><Link to="/instamart">Instamart</Link></li>
-                    <li><Link to="/">Cart</Link></li>
+            <div className="">
+                <ul className="flex py-8 sm:hidden">
+                    <li className="px-2"><Link to="/">Home</Link></li>
+                    <li className="px-2"><Link to="/about">About Us</Link></li>
+                    <li className="px-2"><Link to="/contact">Contact Us</Link></li>
+                    <li className="px-2"><Link to="/instamart">Instamart</Link></li>
+                    <li className="px-2"><Link to="/">Cart</Link></li>
                 </ul>
             </div>
 
-            <h1>{isOnline ? "✅" : "🔴"}</h1>
+            <h1 className="py-8">{isOnline ? "✅" : "🔴"}</h1>
             
-            {isLoggedIn ? (<button onClick={()=>setIsLoggedIn(false)}>Logout</button>) : (<button onClick={()=>setIsLoggedIn(true)}>Login</button>)}
+            {isLoggedIn ? (<button className="px-2 bg-orange-300 hover:bg-orange-400 shadow-md" onClick={()=>setIsLoggedIn(false)}>Logout</button>) : (<button className="px-2 bg-orange-300 hover:bg-orange-400 shadow-md" onClick={()=>setIsLoggedIn(true)}>Login</button>)}
             
             
         </div>

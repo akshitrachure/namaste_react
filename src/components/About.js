@@ -36,9 +36,9 @@ class About extends React.Component{
         console.log("Parent Render");
         return(
             
-            <div>
-             <h1>This is About US Page.</h1>
-             <h2>H2 header</h2>
+            <div className="p-2">
+             <h1 className="font-bold text-3xl p-2">This is About US Page.</h1>
+             <h2 className="font-bold text-2xl p-2">H2 header</h2>
              <Profile/>
              <ProfileClass name="Akshit" age="21"/>
             </div>
