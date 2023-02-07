@@ -1,0 +1,32 @@
+diff btwn JSON & JS object
+
+headless browser
+
+E2E testing
+
+unit testing
+
+Integration testing
+
+
+Jest - to test JS code.
+
+
+1. Installing React Testing Library - npm install --save-dev @testing-library/react
+
+2. Install Jest - npm i -D jest
+
+3. configure Jest - npx jest --init
+
+4. Install jest-environment-jsdom
+npm run jest -error so execute npm i -D jest-environment-jsdom
+Now, npm run jest - says no testcases as we did not write any as of now.
+
+5. Create my first test - 
+under components create __tests__ folder
+then create test files.
+
+6. configure babel - npm i --save-Dev babel-jest @babel/core @babel/preset-env and modify .babelrc
+
+
+7. install npm i -D @babel/preset-react and modify .babelrc

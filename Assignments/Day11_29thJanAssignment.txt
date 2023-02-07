@@ -1,0 +1,22 @@
+1. What is Prop drilling?
+A. Prop drilling is a situation where data is passed from one component through multiple interdependent components until you get to the component where the data is needed.
+
+
+2. What is lifting the state up?
+A. In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. This is called lifting state up.
+We lift the state up to make the parent state a single shared state and a sole "source of truth" and pass the parent's data to its children. This concept is called lifting state up. It is of great use to maintain data consistency in our react applications.
+
+
+3. What is Context Provider and Context Consumer?
+A. Context Provider:
+Every Context object comes with a Provider React component that allows consuming components to subscribe to context changes. The Provider component accepts a value prop to be passed to consuming components that are descendants of this Provider. One Provider can be connected to many consumers.
+
+Context Consumer:
+A React component that subscribes to context changes. Using this component lets you subscribe to a context within a function component. Requires a function as a child. The function receives the current context value and returns a React node.
+The consumer is used to consume the nearest provided context. Note that we can provide the same context many times through your application, and we can even provide the same context nested. We can also use the same context many times, even outside any provider.
+
+
+4. If you don't pass a value to the provider does it take the default value?
+A. If we don't pass a value to the Context.Provider in React, then it will use the default value defined in the context creation using React.createContext(). If no default value is specified while creating the context, then it will be undefined.
+
+Consuming components using the useContext hook will not receive any data and could potentially result in an error or unexpected behavior if that data is expected to be used in the component.

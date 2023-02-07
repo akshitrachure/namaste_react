@@ -1,0 +1,18 @@
+prop drilling, context, redux all are used for same purpose i.e. data mgmt i.e. to get the data from one componrnt to all/other 
+
+context is used to avoid PropDrilling.
+
+
+
+
+Redux working
+
+-> If we want to add an item to a cart then -> Once the + icon is clicked then it dispatches an action which calls a reducer function which updates the slice on the redux store.
+
+where slice - logical separation on the store
+store - the central place where the components or code that will be used by all the components will be stored.
+
+
+-> If we want to read from cart - We use a Selector to read from cart and use it in our code when needed.
+
+Selector is a hook. (useSelector)

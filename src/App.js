@@ -5,12 +5,15 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import RestaurantCard from "./components/RestaurantCard";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider, UNSAFE_RouteContext } from "react-router-dom";
 //import About from "./components/About"
 import Contact from "./components/ContactUs";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
+import { useState } from "react";
+import userContext from "./utils/userContext";
+
 //import Instamart from "./components/Instamart";
 
 
@@ -59,12 +62,32 @@ const About = lazy(()=> import("./components/About"));
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const AppLayout = () => {
+
+  const [userData, setUserData] = useState({ //In real world we will get this userData from an API call (Loggedin user name)
+      name: "Akshit Rachure",
+      email: "myemail@gmail.com"
+  })
+
     return(
-        <>
+        <userContext.Provider value={{
+          userDetails: userData,
+          setUserData: setUserData
+        }}>
+        
             <Header/>
             <Outlet/>
+            <userContext.Provider value={{
+              userDetails:{
+                name:"ABCDEF",
+                email:"aaa@gmailc.om"
+              },
+              
+            }}>
             <Footer/>
-        </>
+            </userContext.Provider>
+            
+            
+        </userContext.Provider>
     )
 }
 

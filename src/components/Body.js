@@ -1,12 +1,15 @@
 //import { restaurantList } from "../config";
 import RestaurantCard from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useRestaurantDetails from "../utils/useRestaurantDetails";
 import { FETCH_RESTAURANT_DETAILS_URL } from "../config";
 import useOnline from "../utils/useOnline";
+import userContext from "../utils/userContext";
+
+
 
 const Body = () =>{
 
@@ -16,35 +19,14 @@ const Body = () =>{
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
     
-    // useEffect(()=>{
-    //     getRestaurantDetails();
-    // },[]);
-
-
-    // async function getRestaurantDetails(){
-    //     const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
-    //     const json =  await data.json();
-    //     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    //     setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    //     //     console.log("HEYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");
-    // //     //console.log(json?.data?.cards[2]?.data?.data?.cards);
-    // //    console.log(restaurant);
-    //     //setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    // }
-
-
+    const {userDetails, setUserData} = useContext(userContext);
+    
     const restaurantsDetails = useRestaurantDetails();
     useEffect(()=>{
         setAllRestaurants(restaurantsDetails);
         setFilteredRestaurants(restaurantsDetails);
     },[restaurantsDetails]);
 
-
-    // console.log("BODYYYYYYYYYYYYYYYY");
-    // console.log(restaurantsDetails);
-    // setAllRestaurants(restaurantsDetails);
-    // setFilteredRestaurants(restaurantsDetails);
-    // console.log(prints)
 
     const isOnline = useOnline();
 
@@ -68,7 +50,17 @@ const Body = () =>{
                     const filteredData = filterData(searchText, allRestaurants);
                     setFilteredRestaurants(filteredData);
                 }}>Search</button>
+
+                <input placeholder="userData" className="focus:bg-green-200 p-2 m-2" value={userDetails.name} onChange={(e)=>setUserData({
+                    ...userDetails,
+                    name:e.target.value,                    
+                    })}></input>
+           
             </div>
+
+           
+                
+
             <div className="flex flex-wrap sm:text-center justify-center">
                  {filteredRestaurants.length === 0 ? (<h1>No restaurants match your search</h1>) : (filteredRestaurants.map((restaurant)=>{
                     return (

@@ -1,7 +1,7 @@
 import React from "react";
 import Profile from "./Profile";
 import ProfileClass from "./ProfileClass";
-
+import userContext from "../utils/userContext";
 // const About = () => {
 //     return(
 //         <div>
@@ -41,6 +41,9 @@ class About extends React.Component{
              <h2 className="font-bold text-2xl p-2">H2 header</h2>
              <Profile/>
              <ProfileClass name="Akshit" age="21"/>
+             <userContext.Consumer>
+                {({userDetails})=> <p>{userDetails.name} - {userDetails.email}</p>}
+             </userContext.Consumer>
             </div>
         )
     }
