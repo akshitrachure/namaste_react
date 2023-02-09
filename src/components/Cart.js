@@ -16,7 +16,7 @@ const Cart = () => {
         <div>
             <button className="p-2 rounded-md bg-red-100" onClick={()=>handleClearCart()}>Clear Cart</button>
 
-            <div className="flex">
+            <div className="flex" data-testid="fooditems">
                 {cartItems.map(item=><FoodItem {...item} key={item.id}/>)} 
             </div>
         </div>

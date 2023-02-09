@@ -1,0 +1,28 @@
+1. What are different types of testing?
+A. Unit tests 
+Integration tests
+Functional tests
+End-to-end tests
+Acceptance testing
+Performance testing
+Smoke testing etc 
+
+
+2. What is Enzyme?
+A. Enzyme is a JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components' output. It was developed at Airbnb and later transferred to an independent organization.
+Instead of serving as a full testing library, Enzyme is a library that makes testing React components specifically easier. It integrates with many full testing libraries, including Jest.
+
+
+3. Enzyme vs React testing Library.
+A. 
+Enzyme:
+Enzyme is a popular testing library from Airbnb. It provides us with mechanism to test the implementation details of a React component. It can provide us with access to the state, props and children components of a React component while writing test. We use such information about the React component to run our assertions.
+
+React Testing Library:
+React Testing Library is a light-weight testing library. It provides light utility functions on top of react-dom and react-dom/test-utils, in a way that encourages good testing practices.
+Unlike Enzyme, it is not focused on the implementation details of the component. React Testing Library uses the render logic to run our assertions. The testing is done from user’s perspective. That’s why this library doesn’t provide us the access to the component’s properties such as it’s state and props. The assertions are made from the DOM elements which can be accessed by the utility provided by React Testing Library.
+
+
+4. What is Jest and why do we use it?
+A. Jest is a JavaScript testing framework designed to ensure correctness of any JavaScript codebase. It allows us to write tests with an approachable, familiar and feature-rich API that gives us results quickly. Jest is well-documented, requires little configuration and can be extended to match our requirements.
+Jest is an open-source testing framework built on JavaScript, designed majorly to work with React and React Native based web applications. Often, unit tests are not very useful when run on the frontend of any software.

@@ -10,7 +10,7 @@ const Title = () => {
     return(
         <>
             <a href="/">
-            <img className="w-24" alt="Logo Image" src={Logo}></img>
+            <img className="w-24" alt="Logo Image" src={Logo} data-testid="logo"></img>
             </a>
             {/* <input type="text"></input> */}
         </>
@@ -38,11 +38,11 @@ const Header = () => {
                     <li className="px-2"><Link to="/about">About Us</Link></li>
                     <li className="px-2"><Link to="/contact">Contact Us</Link></li>
                     <li className="px-2"><Link to="/instamart">Instamart</Link></li>
-                    <li className="px-2"><Link to="/cart">Cart - {cartItems.length} items</Link></li>
+                    <li className="px-2" ><Link to="/cart" data-testid="cart">Cart - {cartItems.length} items</Link></li>
                 </ul>
             </div>
 
-            <h1 className="py-8">{isOnline ? "✅" : "🔴"}</h1>
+            <h1 data-testid="onlineStatus" className="py-8">{isOnline ? "✅" : "🔴"}</h1>
             
             <p>{userDetails.name} - {userDetails.email}</p>
 

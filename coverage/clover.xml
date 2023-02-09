@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1675961128270" clover="3.2.0">
+  <project timestamp="1675961128270" name="All files">
+    <metrics statements="51" coveredstatements="44" conditionals="14" coveredconditionals="9" methods="24" coveredmethods="17" elements="89" coveredelements="70" complexity="0" loc="51" ncloc="51" packages="2" files="8" classes="8"/>
+    <package name="components">
+      <metrics statements="48" coveredstatements="41" conditionals="14" coveredconditionals="9" methods="24" coveredmethods="17"/>
+      <file name="Body.js" path="E:\WebDevelopmentCourse\ReactCourse_Namastedev\src\components\Body.js">
+        <metrics statements="20" coveredstatements="17" conditionals="8" coveredconditionals="5" methods="6" coveredmethods="5"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="17" count="13" type="stmt"/>
+        <line num="18" count="12" type="stmt"/>
+        <line num="19" count="12" type="stmt"/>
+        <line num="22" count="12" type="stmt"/>
+        <line num="24" count="12" type="stmt"/>
+        <line num="25" count="12" type="stmt"/>
+        <line num="26" count="5" type="stmt"/>
+        <line num="27" count="5" type="stmt"/>
+        <line num="31" count="12" type="stmt"/>
+        <line num="33" count="12" type="cond" truecount="1" falsecount="1"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="40" count="12" type="cond" truecount="1" falsecount="1"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="43" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="66" count="50" type="stmt"/>
+      </file>
+      <file name="Cart.js" path="E:\WebDevelopmentCourse\ReactCourse_Namastedev\src\components\Cart.js">
+        <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
+      </file>
+      <file name="Header.js" path="E:\WebDevelopmentCourse\ReactCourse_Namastedev\src\components\Header.js">
+        <metrics statements="9" coveredstatements="8" conditionals="4" coveredconditionals="2" methods="5" coveredmethods="3"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="23" count="7" type="stmt"/>
+        <line num="25" count="7" type="stmt"/>
+        <line num="27" count="7" type="stmt"/>
+        <line num="29" count="10" type="stmt"/>
+        <line num="31" count="7" type="stmt"/>
+        <line num="49" count="0" type="cond" truecount="1" falsecount="1"/>
+      </file>
+      <file name="RestaurantMenu.js" path="E:\WebDevelopmentCourse\ReactCourse_Namastedev\src\components\RestaurantMenu.js">
+        <metrics statements="8" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="6" coveredmethods="4"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="27" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="42" count="96" type="stmt"/>
+      </file>
+      <file name="Shimmer.js" path="E:\WebDevelopmentCourse\ReactCourse_Namastedev\src\components\Shimmer.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="6" count="90" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="MockRestaurantMenuData.js" path="E:\WebDevelopmentCourse\ReactCourse_Namastedev\src\utils\MockRestaurantMenuData.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="MockRestaurantdata.js" path="E:\WebDevelopmentCourse\ReactCourse_Namastedev\src\utils\MockRestaurantdata.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="store.js" path="E:\WebDevelopmentCourse\ReactCourse_Namastedev\src\utils\store.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="3" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

@@ -37,9 +37,9 @@ const RestaurantMenu=()=>{
             <h3 className="px-4 font-semibold text-lg">{restaurant?.costForTwoMsg}</h3>
         </div>
         <div className="px-10 py-3">
-            <h1 className="font-bold text-3xl py-3">Menu</h1>
+            <h1 className="font-bold text-3xl py-3" data-testid="menu">Menu</h1>
             <ul>
-                {Object.values(restaurant?.menu?.items).map((item)=>(<li className="py-1" key={item.id}>{item.name} - <button onClick={()=>addFoodItem(item)} className="rounded-md p-1 bg-green-200">Add</button> - <button className="p-1 rounded-md bg-red-200" onClick={()=>removeItems(item.id)}>Remove</button></li>))}
+                {Object.values(restaurant?.menu?.items).map((item)=>(<li className="py-1" key={item.id}>{item.name} - <button data-testid="add-btn" onClick={()=>addFoodItem(item)} className="rounded-md p-1 bg-green-200">Add</button> - <button className="p-1 rounded-md bg-red-200" onClick={()=>removeItems(item.id)}>Remove</button></li>))}
             </ul>
         </div>
         
