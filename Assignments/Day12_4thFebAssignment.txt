@@ -1,0 +1,44 @@
+1. useContext vs Redux.
+A.
+useContext:
+-  useContext is a hook.
+- It is used to share data.
+- Changes are made with the Context value.
+- We can change the state in it.
+- It re-renders all components whenever there is any update in the provider’s value prop.
+- It is better to use with small applications.
+- It is easy to understand and requires less code.
+
+Redux:
+- Redux is a state management library.
+- It is used to manage data and state.
+- Changes are made with pure functions i.e. reducers.
+- The state is read-only. We cannot change them directly.
+- It only re-render the updated components.
+- It is perfect for larger applications. 
+- It is quite complex to understand.
+
+
+2. Advantage of using Redux toolkit over Redux.
+A. Redux Toolkit makes it easier to write good Redux applications and speeds up development, by baking in our recommended best practices, providing good default behaviors, catching mistakes, and allowing us to write simpler code. Redux Toolkit is beneficial to all Redux users regardless of skill level or experience.
+
+
+3. Explain Dispatcher.
+A. The dispatcher is the center point of the data flow in a Flux application. It is simply a directory of call-backs and incites these callbacks in a particular order. Callbacks are stored in each and every store with a dispatcher. Whenever new data is introduced in the dispatcher, it takes the help of callbacks to send the data to all of the different stores. The callbacks are invoked using the dispatch() method which uses the data payload object.
+
+
+4. Explain Reducer.
+A. Reducers are functions that take the current state and an action as arguments, and return a new state result. In other words, (state, action) => newState
+
+
+5. Explain slice.
+A. A slice is the portion of Redux code that relates to a specific set of data and actions within the store 's state. A slice reducer is the reducer responsible for handling actions and updating the data for a given slice.
+
+
+6. Explain selector.
+A. A selector is a function that accepts Redux state as an argument and returns data that is derived from that state. Selectors can provide performance optimizations to our application and can also help us encapsulate the global state tree.
+
+
+7. Explain createSlice and the configuration it takes.
+A. createSlice is a function in redux that helps us to create a new slice.
+It takes as inout a name for the slice, initial state of the variables in the slice, reducers which contain code which tells what needs to be done for each of the action item. 

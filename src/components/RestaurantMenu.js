@@ -3,6 +3,8 @@ import { useParams } from "react-router";
 import { IMG_CDN_URL } from "../config";
 import Shimmer from "./Shimmer";
 import useRestaurantInfo from "../utils/useRestaurantInfo";
+import { useDispatch } from "react-redux";
+import { addItem, removeItem } from "../utils/cartSlice";
 
 const RestaurantMenu=()=>{
 
@@ -11,6 +13,16 @@ const RestaurantMenu=()=>{
 
 
     const restaurant = useRestaurantInfo(resId);
+
+    const dispatch = useDispatch();
+
+    function addFoodItem(item){
+        dispatch(addItem(item));
+    }
+
+    function removeItems(id){
+        dispatch(removeItem(id));
+    }
 
     return !restaurant ? (<Shimmer/>) : (
         <div className="flex flex-wrap m-4">
@@ -27,7 +39,7 @@ const RestaurantMenu=()=>{
         <div className="px-10 py-3">
             <h1 className="font-bold text-3xl py-3">Menu</h1>
             <ul>
-                {Object.values(restaurant?.menu?.items).map((item)=>(<li key={item.id}>{item.name}</li>))}
+                {Object.values(restaurant?.menu?.items).map((item)=>(<li className="py-1" key={item.id}>{item.name} - <button onClick={()=>addFoodItem(item)} className="rounded-md p-1 bg-green-200">Add</button> - <button className="p-1 rounded-md bg-red-200" onClick={()=>removeItems(item.id)}>Remove</button></li>))}
             </ul>
         </div>
         

@@ -1,6 +1,8 @@
 import { useState, useContext } from "react"
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/img/Logo";
+import store from "../utils/store";
 import useOnline from "../utils/useOnline";
 import userContext from "../utils/userContext";
 
@@ -24,6 +26,8 @@ const Header = () => {
 
     const {userDetails} = useContext(userContext);
 
+    const cartItems = useSelector((store)=>store.cart.items);
+
     return(
         <div className="flex justify-between bg-orange-200 shadow-lg">
             <Title/>
@@ -34,7 +38,7 @@ const Header = () => {
                     <li className="px-2"><Link to="/about">About Us</Link></li>
                     <li className="px-2"><Link to="/contact">Contact Us</Link></li>
                     <li className="px-2"><Link to="/instamart">Instamart</Link></li>
-                    <li className="px-2"><Link to="/">Cart</Link></li>
+                    <li className="px-2"><Link to="/cart">Cart - {cartItems.length} items</Link></li>
                 </ul>
             </div>
 

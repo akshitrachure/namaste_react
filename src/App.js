@@ -13,6 +13,9 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
 import { useState } from "react";
 import userContext from "./utils/userContext";
+import { Provider } from "react-redux";
+import store from "./utils/store";
+import Cart from "./components/Cart";
 
 //import Instamart from "./components/Instamart";
 
@@ -69,25 +72,27 @@ const AppLayout = () => {
   })
 
     return(
-        <userContext.Provider value={{
-          userDetails: userData,
-          setUserData: setUserData
-        }}>
-        
-            <Header/>
-            <Outlet/>
-            <userContext.Provider value={{
-              userDetails:{
-                name:"ABCDEF",
-                email:"aaa@gmailc.om"
-              },
+        <Provider store={store}>
+          <userContext.Provider value={{
+            userDetails: userData,
+            setUserData: setUserData
+          }}>
+          
+              <Header/>
+              <Outlet/>
+              <userContext.Provider value={{
+                userDetails:{
+                  name:"ABCDEF",
+                  email:"aaa@gmailc.om"
+                },
+                
+              }}>
+              <Footer/>
+              </userContext.Provider>
               
-            }}>
-            <Footer/>
-            </userContext.Provider>
-            
-            
-        </userContext.Provider>
+              
+          </userContext.Provider>
+        </Provider>
     )
 }
 
@@ -127,6 +132,10 @@ const appRouter = createBrowserRouter([
         path:'/instamart',
         element:<Suspense fallback={<h1>Loading...</h1>}><Instamart/></Suspense>,
         errorElement:<Error/>
+      },
+      {
+        path: '/cart',
+        element: <Cart/>
       }
     ]
   },
